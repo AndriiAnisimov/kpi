@@ -27,7 +27,7 @@ export default function Highchart() {
   };
   
   return (
-    <div className="w-[800px]">
+    <div className="mt-4 w-[800px]">
       <HighchartsReact highcharts={Highcharts} options={options} />
     </div>
   );

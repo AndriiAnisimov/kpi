@@ -1,11 +1,14 @@
 "use client";
 import { useState } from "react";
 
+import AffiliateList from "./AffiliateList";
 import Badge from "./Badge";
 import BusinessQuestionList from "./BusinessQuestionList";
 import CopyLink from "./CopyLink";
 import Highchart from "./Highchart";
+import KpiList from "./KpiList";
 import Modal from "./Modal";
+import RequestButton from "./RequestButton";
 
 export default function NavBar() {
   const [openModal, setOpenModal] = useState(null);
@@ -27,13 +30,15 @@ export default function NavBar() {
       </button>
       {openModal === "KPI" && (
         <Modal onClose={handleCloseModal}>
+          <CopyLink />
+
           <div className="flex justify-center items-center">
             <h2 className="text-3xl mr-1">KPI</h2>
             <Badge title="KPI" />
           </div>
           
           <BusinessQuestionList />
-          <CopyLink />
+          <AffiliateList />
         </Modal>
       )}
 
@@ -45,13 +50,15 @@ export default function NavBar() {
       </button>
       {openModal === "Layouts" && (
         <Modal onClose={handleCloseModal}>
+          <CopyLink />
+
           <div className="flex justify-center items-center">
             <h2 className="text-3xl mr-1">Trend for All Assets</h2>
             <Badge title="Layouts" />
           </div>
 
+          <KpiList />
           <Highchart />
-          <CopyLink />
         </Modal>
       )}
 
@@ -63,12 +70,19 @@ export default function NavBar() {
       </button>
       {openModal === "Storyboards" && (
         <Modal onClose={handleCloseModal}>
+          <CopyLink />
+
           <div className="flex justify-center items-center">
             <h2 className="text-3xl mr-1">Storyboards</h2>
             <Badge title="Storyboards" />
           </div>
           
-          <CopyLink />
+          <KpiList />
+          <AffiliateList />
+
+          <div className="mt-4 mx-auto w-[88px]">
+            <RequestButton />
+          </div>
         </Modal>
       )}
     </nav>
