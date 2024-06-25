@@ -1,90 +1,33 @@
-"use client";
 import { useState } from "react";
+import ModalMenuContent from "./ModalMenuContent";
 
-import AffiliateList from "./AffiliateList";
-import Badge from "./Badge";
-import BusinessQuestionList from "./BusinessQuestionList";
-import CopyLink from "./CopyLink";
-import Highchart from "./Highchart";
-import KpiList from "./KpiList";
-import Modal from "./Modal";
-import RequestButton from "./RequestButton";
+type ModalType = "KPI" | "Layouts" | "Storyboards" | null;
 
 export default function NavBar() {
-  const [openModal, setOpenModal] = useState(null);
+  const [openModal, setOpenModal] = useState<ModalType>(null);
 
-  const handleOpenModal = (modalType: any) => setOpenModal(modalType);
+  const handleOpenModal = (modalType: ModalType) => setOpenModal(modalType);
   const handleCloseModal = () => setOpenModal(null);
+
+  const buttons: { label: string; modalType: ModalType }[] = [
+    { label: "Featured", modalType: null },
+    { label: "KPI", modalType: "KPI" },
+    { label: "Layouts", modalType: "Layouts" },
+    { label: "Storyboards", modalType: "Storyboards" },
+  ];
 
   return (
     <nav className="grid grid-cols-4 bg-slate-200 rounded mt-4 p-1">
-      <button className={`rounded py-1 ${openModal === null ? "bg-active" : "bg-default"}`}>
-        Featured
-      </button>
-
-      <button
-        onClick={() => handleOpenModal("KPI")}
-        className={`rounded py-1 ${openModal === "KPI" ? "bg-active" : "bg-default"}`}
-      >
-        KPI
-      </button>
-      {openModal === "KPI" && (
-        <Modal onClose={handleCloseModal}>
-          <CopyLink />
-
-          <div className="flex justify-center items-center">
-            <h2 className="text-3xl mr-1">KPI</h2>
-            <Badge title="KPI" />
-          </div>
-          
-          <BusinessQuestionList />
-          <AffiliateList />
-        </Modal>
-      )}
-
-      <button
-        onClick={() => handleOpenModal("Layouts")}
-        className={`rounded py-1 ${openModal === "Layouts" ? "bg-active" : "bg-default"}`}
-      >
-        Layouts
-      </button>
-      {openModal === "Layouts" && (
-        <Modal onClose={handleCloseModal}>
-          <CopyLink />
-
-          <div className="flex justify-center items-center">
-            <h2 className="text-3xl mr-1">Trend for All Assets</h2>
-            <Badge title="Layouts" />
-          </div>
-
-          <KpiList />
-          <Highchart />
-        </Modal>
-      )}
-
-      <button
-        onClick={() => handleOpenModal("Storyboards")}
-        className={`rounded py-1 ${openModal === "Storyboards" ? "bg-active" : "bg-default"}`}
-      >
-        Storyboards
-      </button>
-      {openModal === "Storyboards" && (
-        <Modal onClose={handleCloseModal}>
-          <CopyLink />
-
-          <div className="flex justify-center items-center">
-            <h2 className="text-3xl mr-1">Storyboards</h2>
-            <Badge title="Storyboards" />
-          </div>
-          
-          <KpiList />
-          <AffiliateList />
-
-          <div className="mt-4 mx-auto w-[88px]">
-            <RequestButton />
-          </div>
-        </Modal>
-      )}
+      {buttons.map(({ label, modalType }) => (
+        <button
+          key={label}
+          onClick={() => handleOpenModal(modalType)}
+          className={`rounded py-1 ${openModal === modalType ? "bg-active" : "bg-default"}`}
+        >
+          {label}
+        </button>
+      ))}
+      {openModal && <ModalMenuContent type={openModal} onClose={handleCloseModal} />}
     </nav>
   );
 }

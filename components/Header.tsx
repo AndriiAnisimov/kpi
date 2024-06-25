@@ -1,10 +1,9 @@
-"use client";
 import RequestButton from "./RequestButton";
 
 export default function Header() {
   return (
     <header>
-      <div className="fixed right-2 top-2">
+      <div className="absolute right-2 top-2">
         <RequestButton />
       </div>
       

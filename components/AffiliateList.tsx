@@ -1,19 +1,22 @@
-import { useSelector } from "react-redux";
-import { RootState } from "../store";
-
-import Title from "./Title";
+import { useFavoriteAssets, useUniqueValues } from "@/utils/useFavoriteAssets";
+import BadgeItem from "./BadgeItem";
 
 export default function AffiliateList() {
-  const assets = useSelector((state: RootState) => state.assets.assets);
-  // const favoriteAssets = useSelector((state: RootState) => 
-  //   state.assets.assets.filter(asset => asset.favorite === true)
-  // );
-  const uniqueAffiliates = (Array.from(new Set(assets.filter(asset => asset.affiliate).map(asset => asset.affiliate)))).join(", ");
+  const favoriteAssets = useFavoriteAssets();
+  const uniqueAffiliates = useUniqueValues(favoriteAssets, "affiliate");
+  const affiliatesArray = uniqueAffiliates.split(", ");
 
   return (
-    <>
-      <Title title="Affiliate List" />
-      {uniqueAffiliates}
-    </>
+    <div className="text-center mt-4">
+      {affiliatesArray.map((affiliate) => {
+        if (affiliate) {
+          return <BadgeItem
+            key={affiliate}
+            title={affiliate}
+          />
+        }
+        return "No affiliates selected";
+      })}
+    </div>
   );
 }

@@ -1,5 +1,5 @@
-import { XMarkIcon } from "@heroicons/react/24/outline";
 import { ModalInterface } from "@/interfaces/ModalInterface";
+import { XMarkIcon } from "@heroicons/react/24/outline";
 
 export default function Modal({ onClose, children }: ModalInterface) {
   return (

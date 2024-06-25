@@ -1,5 +1,20 @@
-// export const roleDB = ["guest"];
-export const roleDB = ["admin", "editor", "guest"];
+export const roleDB = [
+  {
+    id: "36029d8a-4086-444a-8d98-2a264e5aac37",
+    name: "guest",
+    isActive: true
+  },
+  {
+    id: "2186b6a7-517b-4190-9028-5c1a7d37aff0",
+    name: "editor",
+    isActive: true
+  },
+  {
+    id: "e0aa07dc-4ff2-4e7a-b1db-7c675e1983e9",
+    name: "admin",
+    isActive: true
+  }
+];
 
 export const assetDB = [
   {
