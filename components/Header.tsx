@@ -10,9 +10,6 @@ export default function Header() {
         <div className="absolute right-2 top-2">
           <RequestButton />
         </div>
-        
-        <h1 className="font-bold mt-8 text-4xl text-center">Library</h1>
-        <p className="mt-4 text-center">Browse for assets needed to report and present analysis.</p>
       </header>
     </Provider>
   );

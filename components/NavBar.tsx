@@ -1,33 +1,31 @@
+"use client";
+import Link from "next/link";
 import { useState } from "react";
-import ModalMenuContent from "./ModalMenuContent";
 
-type ModalType = "KPI" | "Layouts" | "Storyboards" | null;
+function NavLink({ title, url }: { title: string, url: string }) {
+  return (
+    <Link href={url} className="rounded-lg px-3 py-2 text-slate-700 hover:bg-slate-100 hover:text-slate-900">
+      {title}
+    </Link>
+  );
+}
 
 export default function NavBar() {
-  const [openModal, setOpenModal] = useState<ModalType>(null);
-
-  const handleOpenModal = (modalType: ModalType) => setOpenModal(modalType);
-  const handleCloseModal = () => setOpenModal(null);
-
-  const buttons: { label: string; modalType: ModalType }[] = [
-    { label: "Featured", modalType: null },
-    { label: "KPI", modalType: "KPI" },
-    { label: "Layouts", modalType: "Layouts" },
-    { label: "Storyboards", modalType: "Storyboards" },
-  ];
+  const [links, setLinks] = useState([
+    ["Home", "/"],
+    ["Products", "/products"],
+    ["Favorites", "/favorites"],
+    ["About", "/about"],
+    ["Cart", "/cart"],
+    ["Orders", "/orders"],
+    ["Admin", "/admin"]
+  ]);
 
   return (
-    <nav className="grid grid-cols-4 bg-slate-200 rounded mt-4 p-1">
-      {buttons.map(({ label, modalType }) => (
-        <button
-          key={label}
-          onClick={() => handleOpenModal(modalType)}
-          className={`rounded py-1 ${openModal === modalType ? "bg-active" : "bg-default"}`}
-        >
-          {label}
-        </button>
+    <nav className="flex sm:justify-center space-x-4">
+      {links.map(([title, url]) => (
+        <NavLink key={url} title={title} url={url} />
       ))}
-      {openModal && <ModalMenuContent type={openModal} onClose={handleCloseModal} />}
     </nav>
   );
 }

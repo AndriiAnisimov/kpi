@@ -3,7 +3,7 @@ import BadgeItem from "./BadgeItem";
 
 export default function KpiList() {
   const favoriteAssets = useFavoriteAssets();
-  const uniqueKpi = useUniqueValues(favoriteAssets, "kpi");
+  const uniqueKpi = useUniqueValues(favoriteAssets, "name");
   const kpiArray = uniqueKpi.split(", ");
 
   return (

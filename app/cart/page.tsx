@@ -1,3 +1,7 @@
+import Title from "@/components/Title";
+
 export default function CartPage() {
-  return <div>CartPage</div>
+  return (
+    <Title title="Cart Page" />
+  )
 }

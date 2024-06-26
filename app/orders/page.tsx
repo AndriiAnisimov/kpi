@@ -1,3 +1,7 @@
+import Title from "@/components/Title";
+
 export default function OrdersPage() {
-  return <div>OrdersPage</div>
+  return (
+    <Title title="Orders Page" />
+  )
 }

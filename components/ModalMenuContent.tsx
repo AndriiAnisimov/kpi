@@ -45,7 +45,7 @@ export default function ModalContent({ type, onClose }: { type: ModalType; onClo
       {type === "Layouts" && (
         <>
           <KpiList />
-          <h2 className="text-2xl text-center mt-4">Trend for Favorites</h2>
+          <h2 className="text-2xl text-center mt-4">Trend for Favorites KPI</h2>
           <Highchart />
         </>
       )}

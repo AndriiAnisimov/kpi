@@ -11,12 +11,6 @@ export default function FavoritesPage() {
         title="Favorite"
         subtitle="Your favorite assets"
       />
-
-      <AssetList
-        category="All"
-        title="All"
-        subtitle="A complete list of all assets"
-      />
     </Provider>
   )
 }

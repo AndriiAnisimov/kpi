@@ -1,3 +1,7 @@
+import Title from "@/components/Title";
+
 export default function AdminPage() {
-  return <div>AdminPage</div>
+  return (
+    <Title title="Admin Page" />
+  )
 }
