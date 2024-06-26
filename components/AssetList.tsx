@@ -1,28 +1,23 @@
 import { useSelector } from "react-redux";
-import { RootState } from "../store";
+import { RootState } from "@/store";
 import { AssetListInterface } from "@/interfaces/AssetListInterface";
+import useFilteredAssets from "@/utils/useFilteredAssets";
 
 import Asset from "./Asset";
 import SubTitle from "./SubTitle";
 import Title from "./Title";
 
 export default function AssetsList({ category, title, subtitle }: AssetListInterface) {
-  const assets = useSelector((state: RootState) => state.assets.assets);
   const searchQuery = useSelector((state: RootState) => state.search.query.toLowerCase());
+  const filteredAssets = useFilteredAssets(searchQuery);
 
-  const filteredAssets = assets.filter(asset =>
-    asset.affiliate?.toLowerCase().includes(searchQuery) ||
-    asset.category?.toLowerCase().includes(searchQuery) ||
-    asset.date.toLowerCase().includes(searchQuery) ||
-    asset.description.toLowerCase().includes(searchQuery) ||
-    asset.name.toLowerCase().includes(searchQuery) ||
-    asset.short_description.toLowerCase().includes(searchQuery) ||
-    asset.value.toString().toLowerCase().includes(searchQuery)
-  );
-
-  const categorizedAssets = category === "Another"
-    ? filteredAssets.filter(asset => asset.category !== "Featured" && asset.category !== "Trending")
-    : filteredAssets.filter(asset => asset.category === category);
+  const categorizedAssets = category === "Favorites"
+    ? filteredAssets.filter(asset => asset.favorite)
+    : category === "All"
+      ? filteredAssets
+      : category === "Another"
+        ? filteredAssets.filter(asset => asset.category !== "Featured" && asset.category !== "Trending")
+        : filteredAssets.filter(asset => asset.category === category);
 
   return (
     <>

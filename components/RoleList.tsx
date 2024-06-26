@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
-import { RootState } from "../store";
+import { RootState } from "@/store";
 import Title from "./Title";
 import { RoleItemInterface } from "@/interfaces/RoleItemInterface";
 

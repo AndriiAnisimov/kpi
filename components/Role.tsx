@@ -1,6 +1,6 @@
 import { useMemo } from "react";
 import { useSelector } from "react-redux";
-import { RootState } from "../store";
+import { RootState } from "@/store";
 import { RoleInterface } from "@/interfaces/RoleInterface";
 
 export default function Role({ allowedRoles, children }: RoleInterface) {

@@ -1,6 +1,6 @@
 import { useMemo } from "react";
 import { useSelector } from "react-redux";
-import { RootState } from "../store";
+import { RootState } from "@/store";
 
 import Highcharts from "highcharts";
 import HighchartsReact from "highcharts-react-official";

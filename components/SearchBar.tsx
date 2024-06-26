@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import { setSearchQuery, clearSearchQuery } from "@/store/slices/searchSlice";
-import { RootState } from "../store";
+import { RootState } from "@/store";
 import { MagnifyingGlassIcon, XMarkIcon } from "@heroicons/react/24/outline";
 
 export default function SearchBar() {
@@ -16,7 +16,7 @@ export default function SearchBar() {
   };
 
   return (
-    <div className="relative w-full">
+    <div className="relative mt-4 w-full">
       <input
         type="text"
         value={searchQuery}
