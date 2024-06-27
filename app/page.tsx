@@ -6,7 +6,7 @@ import { useFavoriteAssets, useUniqueValues } from "@/utils/useFavoriteAssets";
 import AssetList from "@/components/AssetList";
 import MultiSelect from "@/components/MultiSelect";
 
-function ProductsContent() {
+function AssetsContent() {
   const favoriteAssets = useFavoriteAssets();
   const uniqueCountries = useUniqueValues(favoriteAssets, "country");
   const countryArray = uniqueCountries.split(", ");
@@ -37,7 +37,7 @@ function ProductsContent() {
 export default function HomePage() {
   return (
     <Provider store={store}>
-      <ProductsContent />
+      <AssetsContent />
     </Provider>
   );
 }

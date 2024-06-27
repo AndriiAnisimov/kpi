@@ -9,7 +9,9 @@ export default function useFilteredAssets(searchQuery: string): AssetInterface[]
   const filteredAssets = useMemo(() => {
     return assets.filter(asset =>
       asset.affiliate?.toLowerCase().includes(searchQuery) ||
+      asset.brand.toLowerCase().includes(searchQuery) ||
       asset.category?.toLowerCase().includes(searchQuery) ||
+      asset.country.toLowerCase().includes(searchQuery) ||
       asset.date.toLowerCase().includes(searchQuery) ||
       asset.description.toLowerCase().includes(searchQuery) ||
       asset.name.toLowerCase().includes(searchQuery) ||
