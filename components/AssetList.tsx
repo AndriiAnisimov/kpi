@@ -25,8 +25,12 @@ export default function AssetsList({ category, title, subtitle }: AssetListInter
     <>
       {categorizedAssets.length > 0 ? (
         <>
-          <Title title={title} />
-          <SubTitle subtitle={subtitle} />
+          {category !== "All" && (
+            <>
+              <Title title={title} />
+              <SubTitle subtitle={subtitle} />
+            </>
+          )}
 
           <ul className="grid gap-x-8 gap-y-4 grid-cols-2 mt-4">
             {categorizedAssets.map((asset) => (
@@ -36,6 +40,7 @@ export default function AssetsList({ category, title, subtitle }: AssetListInter
                 itemClass={`flex gap-2 p-2 ${
                   category === "Featured" ? "border-2 rounded-lg bg-white hover:bg-slate-200" : "hover:bg-white"
                 } hover:cursor-pointer`}
+                useLink={category === "All"}
               />
             ))}
           </ul>
