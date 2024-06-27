@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useFavoriteAssets } from "@/utils/useFavoriteAssets";
 import { InformationCircleIcon } from "@heroicons/react/24/outline";
-import Popup from "./Popup";
+import Popup from "./shared/Popup";
 
 export default function MetricPage() {
   const favoriteAssets = useFavoriteAssets();

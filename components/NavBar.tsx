@@ -15,6 +15,7 @@ export default function NavBar() {
     ["Home", "/"],
     ["Products", "/products"],
     ["Favorites", "/favorites"],
+    ["Archived", "/archived"],
     ["About", "/about"],
     ["Cart", "/cart"],
     ["Orders", "/orders"],

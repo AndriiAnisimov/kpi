@@ -2,6 +2,8 @@ import { BusinessQuestionInterface } from "./BusinessQuestionInterface";
 
 export interface AssetInterface {
   affiliate?: string;
+  archive: boolean;
+  brand: string;
   business_question?: BusinessQuestionInterface;
   category?: string;
   country: string;

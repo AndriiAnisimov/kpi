@@ -4,8 +4,8 @@ import { AssetListInterface } from "@/interfaces/AssetListInterface";
 import useFilteredAssets from "@/utils/useFilteredAssets";
 
 import Asset from "./Asset";
-import SubTitle from "./SubTitle";
-import Title from "./Title";
+import SubTitle from "./shared/SubTitle";
+import Title from "./shared/Title";
 
 export default function AssetsList({ category, title, subtitle }: AssetListInterface) {
   const searchQuery = useSelector((state: RootState) => state.search.query.toLowerCase());
@@ -15,9 +15,11 @@ export default function AssetsList({ category, title, subtitle }: AssetListInter
     ? filteredAssets.filter(asset => asset.favorite)
     : category === "All"
       ? filteredAssets
-      : category === "Another"
-        ? filteredAssets.filter(asset => asset.category !== "Featured" && asset.category !== "Trending")
-        : filteredAssets.filter(asset => asset.category === category);
+      : category === "Archived"
+        ? filteredAssets.filter(asset => asset.archive)
+        : category === "Another"
+          ? filteredAssets.filter(asset => asset.category !== "Featured" && asset.category !== "Trending")
+          : filteredAssets.filter(asset => asset.category === category);
 
   return (
     <>

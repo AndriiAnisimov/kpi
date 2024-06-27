@@ -1,7 +1,7 @@
 "use client";
 import { Provider } from "react-redux";
 import { store } from "@/store";
-import RequestButton from "./RequestButton";
+import RequestButton from "./shared/RequestButton";
 
 export default function Header() {
   return (

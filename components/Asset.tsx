@@ -4,7 +4,7 @@ import { ChartPieIcon } from "@heroicons/react/24/outline";
 
 import CopyLink from "./CopyLink";
 import Favorite from "./Favorite";
-import Modal from "./Modal";
+import Modal from "./shared/Modal";
 
 export default function Asset({ itemClass, asset }: { itemClass: string, asset: AssetInterface }) {
   const [openModal, setOpenModal] = useState(null);

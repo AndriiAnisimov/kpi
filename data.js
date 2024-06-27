@@ -19,6 +19,8 @@ export const roleDB = [
 export const assetDB = [
   {
     affiliate: "Affiliate1",
+    archive: false,
+    brand: "Aquaflux",
     business_question: {
       description: "What were the sales during the second quarter of this year?",
       id_bq: "773353f8-5c22-4d31-a744-9aa8f1b0ce23",
@@ -36,6 +38,8 @@ export const assetDB = [
   },
   {
     affiliate: "Affiliate2",
+    archive: false,
+    brand: "Cirqula",
     category: "Featured",
     country: "Paraguay",
     date: "06/16/2024",
@@ -48,6 +52,8 @@ export const assetDB = [
   },
   {
     affiliate: "Affiliate5",
+    archive: false,
+    brand: "Nexnova",
     business_question: {
       description: "How do sales during the second quarter of this year compare to the second quarter of last year?",
       id_bq: "65d63dfc-770a-4633-b407-a999fed32321",
@@ -57,7 +63,7 @@ export const assetDB = [
     country: "Burundi",
     date: "06/17/2024",
     description: "Those options are already baked in with this model shoot me an email clear blue water but we need distributors to evangelize the new line to local markets.",
-    favorite: false,
+    favorite: true,
     id: "d9b13448-37be-4a72-8c20-d9291c994612",
     name: "KPI3",
     short_description: "Short description of the item goes nicely here.",
@@ -65,17 +71,21 @@ export const assetDB = [
   },
   {
     affiliate: "Affiliate3",
+    archive: false,
+    brand: "Blissify",
     category: "Featured",
     country: "Nigeria",
     date: "06/18/2024",
     description: "Those options are already baked in with this model shoot me an email clear blue water but we need distributors to evangelize the new line to local markets.",
-    favorite: false,
+    favorite: true,
     id: "045f054d-cbfb-44bf-9b09-b38e75d1f4b1",
     name: "KPI4",
     short_description: "Short description of the item goes nicely here.",
     value: 100
   },
   {
+    archive: false,
+    brand: "Ecliptech",
     business_question: {
       description: "Which sales collateral is viewed most often?",
       id_bq: "37478026-5c40-4549-b3c9-3ed73a6d726a",
@@ -92,6 +102,8 @@ export const assetDB = [
     value: 99
   },
   {
+    archive: false,
+    brand: "Enerexis",
     category: "Trending",
     country: "Myanmar",
     date: "06/20/2024",
@@ -103,6 +115,8 @@ export const assetDB = [
     value: 20
   },
   {
+    archive: false,
+    brand: "Vibranta",
     category: "Trending",
     country: "France",
     date: "06/21/2024",
@@ -115,6 +129,8 @@ export const assetDB = [
   },
   {
     affiliate: "Affiliate2",
+    archive: false,
+    brand: "Optiquest",
     category: "Trending",
     country: "Samoa",
     date: "06/22/2024",
@@ -126,6 +142,8 @@ export const assetDB = [
     value: 100
   },
   {
+    archive: false,
+    brand: "Celestria",
     country: "Oman",
     date: "06/23/2024",
     description: "Those options are already baked in with this model shoot me an email clear blue water but we need distributors to evangelize the new line to local markets.",
@@ -136,6 +154,8 @@ export const assetDB = [
     value: 50
   },
   {
+    archive: false,
+    brand: "Nexgenius",
     business_question: {
       description: "Who are the top-performing sales professionals?",
       id_bq: "ab517284-e001-4a83-855c-2fdaf9d221c5",
@@ -149,5 +169,29 @@ export const assetDB = [
     name: "KPI10",
     short_description: "Short description of the item goes nicely here.",
     value: 60
+  },
+  {
+    archive: true,
+    brand: "Krazero",
+    country: "Germany",
+    date: "06/25/2024",
+    description: "Those options are already baked in with this model shoot me an email clear blue water but we need distributors to evangelize the new line to local markets.",
+    favorite: false,
+    id: "3d2dac7a-7f6d-4f84-9a95-c2d4c60b0a69",
+    name: "KPI11",
+    short_description: "Short description of the item goes nicely here.",
+    value: 35
+  },
+  {
+    archive: true,
+    brand: "Zenluxe",
+    country: "Ukraine",
+    date: "06/26/2024",
+    description: "Those options are already baked in with this model shoot me an email clear blue water but we need distributors to evangelize the new line to local markets.",
+    favorite: false,
+    id: "5471720c-970e-4708-b7a7-b10bf878121d",
+    name: "KPI12",
+    short_description: "Short description of the item goes nicely here.",
+    value: 80
   }
 ];

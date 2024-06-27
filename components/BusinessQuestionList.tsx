@@ -1,6 +1,6 @@
 import { useFavoriteAssets } from "@/utils/useFavoriteAssets";
 import BusinessQuestion from "./BusinessQuestion";
-import Title from "./Title";
+import Title from "./shared/Title";
 
 export default function BusinessQuestionList() {
   const favoriteAssets = useFavoriteAssets();

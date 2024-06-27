@@ -12,15 +12,32 @@ export default function MultiSelect({ options }: { options: string[] }) {
     }
   };
 
+  const clearAll = () => {
+    setSelectedOptions([]);
+  };
+
   return (
     <div className="relative w-64">
       <div
-        className="border rounded cursor-pointer p-2"
+        className="flex justify-between items-center border rounded cursor-pointer p-2"
         onClick={() => setIsOpen(!isOpen)}
       >
-        {selectedOptions.length === 0
-          ? "Select options"
-          : selectedOptions.join(", ")}
+        <span>
+          {selectedOptions.length === 0
+            ? "Please Select"
+            : selectedOptions.join(", ")}
+        </span>
+        {selectedOptions.length > 0 && (
+          <button
+            className="bg-red-500 text-white rounded px-2 py-1 ml-2"
+            onClick={(e) => {
+              e.stopPropagation();
+              clearAll();
+            }}
+          >
+            Clear All
+          </button>
+        )}
       </div>
       {isOpen && (
         <div className="absolute bg-white border rounded shadow-lg mt-1 w-full z-10">
@@ -28,7 +45,9 @@ export default function MultiSelect({ options }: { options: string[] }) {
             <div
               key={option}
               className={`p-2 cursor-pointer ${
-                selectedOptions.includes(option) ? "bg-blue-500 text-white" : "bg-white"
+                selectedOptions.includes(option)
+                  ? "bg-blue-500 text-white"
+                  : "bg-white"
               } hover:bg-blue-500 hover:text-white`}
               onClick={() => handleSelect(option)}
             >
