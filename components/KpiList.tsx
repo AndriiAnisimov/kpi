@@ -1,4 +1,5 @@
-import { useFavoriteAssets, useUniqueValues } from "@/utils/useFavoriteAssets";
+import useFavoriteAssets from "@/utils/useFavoriteAssets";
+import useUniqueValues from "@/utils/useUniqueValues";
 import BadgeItem from "./shared/BadgeItem";
 
 export default function KpiList() {

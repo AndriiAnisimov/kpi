@@ -1,4 +1,4 @@
-import { useFavoriteAssets } from "@/utils/useFavoriteAssets";
+import useFavoriteAssets from "@/utils/useFavoriteAssets";
 
 export default function MetricLast() {
   const favoriteAssets = useFavoriteAssets();

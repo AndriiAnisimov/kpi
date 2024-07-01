@@ -1,4 +1,4 @@
-import { useFavoriteAssets } from "@/utils/useFavoriteAssets";
+import useFavoriteAssets from "@/utils/useFavoriteAssets";
 import BusinessQuestion from "./BusinessQuestion";
 import Title from "./shared/Title";
 

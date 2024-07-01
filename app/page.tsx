@@ -1,10 +1,11 @@
 "use client";
 import { Provider } from "react-redux";
 import { store } from "@/store";
-import { useFavoriteAssets, useUniqueValues } from "@/utils/useFavoriteAssets";
+import useFavoriteAssets from "@/utils/useFavoriteAssets";
+import useUniqueValues from "@/utils/useUniqueValues";
 
 import AssetList from "@/components/AssetList";
-import MultiSelect from "@/components/MultiSelect";
+import MultiSelect from "@/components/shared/MultiSelect";
 
 function AssetsContent() {
   const favoriteAssets = useFavoriteAssets();

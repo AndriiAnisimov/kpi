@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useFavoriteAssets } from "@/utils/useFavoriteAssets";
+import useFavoriteAssets from "@/utils/useFavoriteAssets";
 import { InformationCircleIcon } from "@heroicons/react/24/outline";
 import Popup from "./shared/Popup";
 

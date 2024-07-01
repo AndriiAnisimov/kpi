@@ -7,7 +7,7 @@ import NavBarOld from "@/components/NavBarOld";
 import Role from "@/components/Role";
 import SearchBar from "@/components/SearchBar";
 
-export default function AboutPage() {
+export default function TestPage() {
   return (
     <Provider store={store}>
       <h1 className="font-bold mt-8 text-4xl text-center">Library</h1>
