@@ -1,8 +1,9 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 
 export default function MultiSelect({ options }: { options: string[] }) {
   const [selectedOptions, setSelectedOptions] = useState<string[]>([]);
   const [isOpen, setIsOpen] = useState(false);
+  const containerRef = useRef<HTMLDivElement>(null);
 
   const handleSelect = (option: string) => {
     if (selectedOptions.includes(option)) {
@@ -16,8 +17,21 @@ export default function MultiSelect({ options }: { options: string[] }) {
     setSelectedOptions([]);
   };
 
+  const handleClickOutside = (event: MouseEvent) => {
+    if (containerRef.current && !containerRef.current.contains(event.target as Node)) {
+      setIsOpen(false);
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
   return (
-    <div className="relative w-64">
+    <div className="relative w-64" ref={containerRef}>
       <div
         className="flex justify-between items-center border rounded cursor-pointer p-2"
         onClick={() => setIsOpen(!isOpen)}

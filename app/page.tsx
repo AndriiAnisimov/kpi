@@ -8,41 +8,38 @@ import useUniqueValues from "@/utils/useUniqueValues";
 import AssetList from "@/components/AssetList";
 import MultiSelect from "@/components/shared/MultiSelect";
 
+interface Asset {
+  brand: string;
+  country: string;
+  region: string;
+  name: string;
+}
+
+const MultiSelectGroup = ({ label, options }: { label: string, options: string[] }) => (
+  <div className="flex items-center justify-center mt-2">
+    <p className="mr-2">{label}:</p>
+    <MultiSelect options={options} />
+  </div>
+);
+
 function AssetsContent() {
   const searchQuery = useSelector((state: RootState) => state.search.query.toLowerCase());
   const filteredAssets = useFilteredAssets(searchQuery);
 
-  const uniqueBrands = useUniqueValues(filteredAssets, "brand");
-  const brandArray = uniqueBrands.split(", ").sort();
+  const getUniqueSortedValues = (key: keyof Asset) => useUniqueValues(filteredAssets, key).split(", ").sort();
 
-  const uniqueCountries = useUniqueValues(filteredAssets, "country");
-  const countryArray = uniqueCountries.split(", ").sort();
-
-  const uniqueKPI = useUniqueValues(filteredAssets, "name");
-  const KPIArray = uniqueKPI.split(", ");
+  const brandArray = getUniqueSortedValues("brand");
+  const countryArray = getUniqueSortedValues("country");
+  const regionArray = getUniqueSortedValues("region");
+  const KPIArray = useUniqueValues(filteredAssets, "name").split(", ");
 
   return (
     <>
-      <div className="flex items-center justify-center mt-2">
-        <p className="mr-2">Brands:</p>
-        <MultiSelect options={brandArray} />
-      </div>
-
-      <div className="flex items-center justify-center mt-2">
-        <p className="mr-2">Countries:</p>
-        <MultiSelect options={countryArray} />
-      </div>
-
-      <div className="flex items-center justify-center mt-2">
-        <p className="mr-2">KPIs:</p>
-        <MultiSelect options={KPIArray} />
-      </div>
-
-      <AssetList
-        category="All"
-        title="All"
-        subtitle="A complete list of all assets"
-      />
+      <MultiSelectGroup label="Brands" options={brandArray} />
+      <MultiSelectGroup label="Countries" options={countryArray} />
+      <MultiSelectGroup label="Regions" options={regionArray} />
+      <MultiSelectGroup label="KPIs" options={KPIArray} />
+      <AssetList category="All" title="All" subtitle="A complete list of all assets" />
     </>
   );
 }
