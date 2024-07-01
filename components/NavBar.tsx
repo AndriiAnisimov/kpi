@@ -13,6 +13,9 @@ function NavLink({ title, url }: { title: string, url: string }) {
 export default function NavBar() {
   const [links, setLinks] = useState([
     ["Home", "/"],
+    ["Featured", "/featured"],
+    ["Trending", "/trending"],
+    ["Another", "/another"],
     ["Favorites", "/favorites"],
     ["Archived", "/archived"],
     ["Profile", "/profile"],

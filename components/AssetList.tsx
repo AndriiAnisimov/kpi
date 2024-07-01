@@ -32,13 +32,13 @@ export default function AssetsList({ category, title, subtitle }: AssetListInter
             </>
           )}
 
-          <ul className="grid gap-x-8 gap-y-4 grid-cols-2 mt-4">
+          <ul className="grid gap-x-8 gap-y-4 grid-cols-4 mt-4">
             {categorizedAssets.map((asset) => (
               <Asset
                 key={asset.id}
                 asset={asset}
                 itemClass={`flex gap-2 p-2 ${
-                  category === "Featured" ? "border-2 rounded-lg bg-white hover:bg-slate-200" : "hover:bg-white"
+                  category === "All" ? "border-2 rounded-lg bg-white hover:bg-slate-200" : "hover:bg-white"
                 } hover:cursor-pointer`}
                 useLink={category === "All"}
               />

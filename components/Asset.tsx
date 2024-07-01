@@ -20,17 +20,15 @@ export default function Asset({ itemClass, asset, useLink }: AssetProps) {
   const handleCloseModal = () => setOpenModal(null);
 
   const content = (
-    <>
-      <div className="flex justify-center items-center bg-slate-200 rounded-lg w-24 h-24">
+    <article>
+      <div className="flex justify-center items-center bg-slate-200 rounded-lg w-14 h-14">
         <ChartPieIcon className="size-10" />
       </div>
-      
-      <article>
-        <p className="font-bold">{asset.name}</p>
-        <p>{asset.short_description}</p>
-        <p>{asset.date}</p>
-      </article>
-    </>
+
+      <p className="font-bold">{asset.name}</p>
+      <p>{asset.short_description}</p>
+      <p>{asset.category}</p>
+    </article>
   );
   
   return (

@@ -35,11 +35,28 @@ function AssetsContent() {
 
   return (
     <>
-      <MultiSelectGroup label="Brands" options={brandArray} />
-      <MultiSelectGroup label="Countries" options={countryArray} />
-      <MultiSelectGroup label="Regions" options={regionArray} />
-      <MultiSelectGroup label="KPIs" options={KPIArray} />
-      <AssetList category="All" title="All" subtitle="A complete list of all assets" />
+      <MultiSelectGroup
+        label="Brands"
+        options={brandArray}
+      />
+      <MultiSelectGroup
+        label="Countries"
+        options={countryArray}
+      />
+      <MultiSelectGroup
+        label="Regions"
+        options={regionArray}
+      />
+      <MultiSelectGroup
+        label="KPIs"
+        options={KPIArray}
+      />
+
+      <AssetList
+        category="All"
+        title="All"
+        subtitle="A complete list of all assets"
+      />
     </>
   );
 }
