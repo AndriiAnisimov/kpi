@@ -3,9 +3,9 @@ import { RootState } from "@/store";
 import { AssetListInterface } from "@/interfaces/AssetListInterface";
 import useFilteredAssets from "@/utils/useFilteredAssets";
 
-import Asset from "./Asset";
-import SubTitle from "./shared/SubTitle";
-import Title from "./shared/Title";
+import Asset from "@/components/Asset";
+import SubTitle from "@/components/shared/SubTitle";
+import Title from "@/components/shared/Title";
 
 export default function AssetsList({ category, title, subtitle }: AssetListInterface) {
   const searchQuery = useSelector((state: RootState) => state.search.query.toLowerCase());

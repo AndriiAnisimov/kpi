@@ -1,16 +1,16 @@
 import { TableCellsIcon } from "@heroicons/react/24/outline";
-import AffiliateList from "./AffiliateList";
-import Badge from "./shared/Badge";
-import BusinessQuestionList from "./BusinessQuestionList";
-import CopyLink from "./CopyLink";
-import Highchart from "./Highchart";
-import KpiList from "./KpiList";
-import MetricCount from "./MetricCount";
-import MetricLast from "./MetricLast";
-import MetricPage from "./MetricPage";
-import MetricType from "./MetricType";
-import Modal from "./shared/Modal";
-import RequestButton from "./shared/RequestButton";
+import AffiliateList from "@/components/AffiliateList";
+import Badge from "@/components/shared/Badge";
+import BusinessQuestionList from "@/components/BusinessQuestionList";
+import CopyLink from "@/components/CopyLink";
+import Highchart from "@/components/Highchart";
+import KpiList from "@/components/KpiList";
+import MetricCount from "@/components/MetricCount";
+import MetricLast from "@/components/MetricLast";
+import MetricPage from "@/components/MetricPage";
+import MetricType from "@/components/MetricType";
+import Modal from "@/components/shared/Modal";
+import RequestButton from "@/components/shared/RequestButton";
 
 type ModalType = "KPI" | "Layouts" | "Storyboards" | null;
 

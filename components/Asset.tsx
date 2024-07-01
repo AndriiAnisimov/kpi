@@ -3,9 +3,9 @@ import { AssetInterface } from "@/interfaces/AssetInterface";
 import { ChartPieIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
 
-import CopyLink from "./CopyLink";
-import Favorite from "./Favorite";
-import Modal from "./shared/Modal";
+import CopyLink from "@/components/CopyLink";
+import Favorite from "@/components/Favorite";
+import Modal from "@/components/shared/Modal";
 
 interface AssetProps {
   itemClass: string;

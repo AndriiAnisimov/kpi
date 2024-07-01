@@ -1,29 +1,33 @@
 "use client";
-import { Provider } from "react-redux";
-import { store } from "@/store";
-import useFavoriteAssets from "@/utils/useFavoriteAssets";
+import { Provider, useSelector } from "react-redux";
+import { store, RootState } from "@/store";
+
+import useFilteredAssets from "@/utils/useFilteredAssets";
 import useUniqueValues from "@/utils/useUniqueValues";
 
 import AssetList from "@/components/AssetList";
 import MultiSelect from "@/components/shared/MultiSelect";
 
 function AssetsContent() {
-  const favoriteAssets = useFavoriteAssets();
-  const uniqueCountries = useUniqueValues(favoriteAssets, "country");
-  const countryArray = uniqueCountries.split(", ");
-  const uniqueBrands = useUniqueValues(favoriteAssets, "brand");
-  const brandArray = uniqueBrands.split(", ");
+  const searchQuery = useSelector((state: RootState) => state.search.query.toLowerCase());
+  const filteredAssets = useFilteredAssets(searchQuery);
+
+  const uniqueCountries = useUniqueValues(filteredAssets, "country");
+  const countryArray = uniqueCountries.split(", ").sort();
+
+  const uniqueBrands = useUniqueValues(filteredAssets, "brand");
+  const brandArray = uniqueBrands.split(", ").sort();
 
   return (
     <>
       <div className="flex items-center justify-center mt-2">
-        <p className="mr-2">Countries:</p>
-        <MultiSelect options={countryArray} />
+        <p className="mr-2">Brands:</p>
+        <MultiSelect options={brandArray} />
       </div>
 
       <div className="flex items-center justify-center mt-2">
-        <p className="mr-2">Brands:</p>
-        <MultiSelect options={brandArray} />
+        <p className="mr-2">Countries:</p>
+        <MultiSelect options={countryArray} />
       </div>
 
       <AssetList

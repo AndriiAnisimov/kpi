@@ -1,6 +1,6 @@
 import useFavoriteAssets from "@/utils/useFavoriteAssets";
 import useUniqueValues from "@/utils/useUniqueValues";
-import BadgeItem from "./shared/BadgeItem";
+import BadgeItem from "@/components/shared/BadgeItem";
 
 export default function KpiList() {
   const favoriteAssets = useFavoriteAssets();

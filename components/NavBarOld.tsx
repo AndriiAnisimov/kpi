@@ -1,5 +1,5 @@
 import { useState } from "react";
-import ModalMenuContent from "./ModalMenuContent";
+import ModalMenuContent from "@/components/ModalMenuContent";
 
 type ModalType = "KPI" | "Layouts" | "Storyboards" | null;
 

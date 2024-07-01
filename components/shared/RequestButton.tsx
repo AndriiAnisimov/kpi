@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { CubeIcon } from "@heroicons/react/24/outline";
 
-import Modal from "./Modal";
-import RoleList from "../RoleList";
+import Modal from "@/components/shared/Modal";
+import RoleList from "@/components/RoleList";
 
 export default function RequestButton() {
   const [openModal, setOpenModal] = useState(null);

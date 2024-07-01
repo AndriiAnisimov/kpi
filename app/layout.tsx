@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
-import NavBar from "@/components/NavBar";
 
 const roboto = Roboto({ subsets: ["latin"], weight: ["400", "700"] });
 
@@ -18,7 +17,6 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
       <body className={`${roboto.className} bg-slate-50`}>
         <main className="max-w-3xl mt-4 mx-auto">
           <Header />
-          <NavBar />
           {children}
         </main>
       </body>

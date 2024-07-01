@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 import { RootState } from "@/store";
-import Title from "./shared/Title";
 import { RoleItemInterface } from "@/interfaces/RoleItemInterface";
+import Title from "@/components/shared/Title";
 
 export default function RoleList() {
   const rolesState = useSelector((state: RootState) => state.roles.roles as RoleItemInterface[]);

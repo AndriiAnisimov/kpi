@@ -1,4 +1,4 @@
-import { BusinessQuestionInterface } from "./BusinessQuestionInterface";
+import { BusinessQuestionInterface } from "@/interfaces/BusinessQuestionInterface";
 
 export interface AssetInterface {
   affiliate?: string;

@@ -1,15 +1,16 @@
 "use client";
 import { Provider } from "react-redux";
 import { store } from "@/store";
-import RequestButton from "./shared/RequestButton";
+
+import NavBar from "@/components/NavBar";
+import SearchBar from "@/components/SearchBar";
 
 export default function Header() {
   return (
     <Provider store={store}>
       <header>
-        <div className="absolute right-2 top-2">
-          <RequestButton />
-        </div>
+        <NavBar />
+        <SearchBar />
       </header>
     </Provider>
   );
