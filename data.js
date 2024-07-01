@@ -27,6 +27,28 @@ export const assetDB = [
       name: "Business Question"
     },
     category: "Featured",
+    chart_data: [
+      {
+        date: "06/01/2024",
+        value: 10
+      },
+      {
+        date: "06/02/2024",
+        value: 20
+      },
+      {
+        date: "06/03/2024",
+        value: 30
+      },
+      {
+        date: "06/04/2024",
+        value: 40
+      },
+      {
+        date: "06/05/2024",
+        value: 50
+      }
+    ],
     country: "Kenya",
     date: "06/15/2024",
     description: "Those options are already baked in with this model shoot me an email clear blue water but we need distributors to evangelize the new line to local markets.",
@@ -60,6 +82,28 @@ export const assetDB = [
       name: "Business Question"
     },
     category: "Featured",
+    chart_data: [
+      {
+        date: "06/01/2024",
+        value: 50
+      },
+      {
+        date: "06/02/2024",
+        value: 40
+      },
+      {
+        date: "06/03/2024",
+        value: 30
+      },
+      {
+        date: "06/04/2024",
+        value: 20
+      },
+      {
+        date: "06/05/2024",
+        value: 10
+      }
+    ],
     country: "Burundi",
     date: "06/17/2024",
     description: "Those options are already baked in with this model shoot me an email clear blue water but we need distributors to evangelize the new line to local markets.",

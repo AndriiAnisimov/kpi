@@ -1,4 +1,5 @@
 import { BusinessQuestionInterface } from "@/interfaces/BusinessQuestionInterface";
+import { ChartDataInterface } from "@/interfaces/ChartDataInterface";
 
 export interface AssetInterface {
   affiliate?: string;
@@ -6,6 +7,7 @@ export interface AssetInterface {
   brand: string;
   business_question?: BusinessQuestionInterface;
   category?: string;
+  chart_data?: ChartDataInterface[];
   country: string;
   date: string;
   description: string;

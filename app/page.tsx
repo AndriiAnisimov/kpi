@@ -12,11 +12,14 @@ function AssetsContent() {
   const searchQuery = useSelector((state: RootState) => state.search.query.toLowerCase());
   const filteredAssets = useFilteredAssets(searchQuery);
 
+  const uniqueBrands = useUniqueValues(filteredAssets, "brand");
+  const brandArray = uniqueBrands.split(", ").sort();
+
   const uniqueCountries = useUniqueValues(filteredAssets, "country");
   const countryArray = uniqueCountries.split(", ").sort();
 
-  const uniqueBrands = useUniqueValues(filteredAssets, "brand");
-  const brandArray = uniqueBrands.split(", ").sort();
+  const uniqueKPI = useUniqueValues(filteredAssets, "name");
+  const KPIArray = uniqueKPI.split(", ");
 
   return (
     <>
@@ -28,6 +31,11 @@ function AssetsContent() {
       <div className="flex items-center justify-center mt-2">
         <p className="mr-2">Countries:</p>
         <MultiSelect options={countryArray} />
+      </div>
+
+      <div className="flex items-center justify-center mt-2">
+        <p className="mr-2">KPIs:</p>
+        <MultiSelect options={KPIArray} />
       </div>
 
       <AssetList

@@ -20,7 +20,7 @@ export default function NavBar() {
   ]);
 
   return (
-    <nav className="flex sm:justify-center space-x-4">
+    <nav className="flex justify-center">
       {links.map(([title, url]) => (
         <NavLink key={url} title={title} url={url} />
       ))}

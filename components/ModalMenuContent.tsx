@@ -3,7 +3,6 @@ import AffiliateList from "@/components/AffiliateList";
 import Badge from "@/components/shared/Badge";
 import BusinessQuestionList from "@/components/BusinessQuestionList";
 import CopyLink from "@/components/CopyLink";
-import Highchart from "@/components/Highchart";
 import KpiList from "@/components/KpiList";
 import MetricCount from "@/components/MetricCount";
 import MetricLast from "@/components/MetricLast";
@@ -45,8 +44,6 @@ export default function ModalContent({ type, onClose }: { type: ModalType; onClo
       {type === "Layouts" && (
         <>
           <KpiList />
-          <h2 className="text-2xl text-center mt-4">Trend for Favorites KPI</h2>
-          <Highchart />
         </>
       )}
 
