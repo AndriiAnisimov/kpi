@@ -1,7 +1,7 @@
 import { useState } from "react";
 import ModalMenuContent from "@/components/ModalMenuContent";
 
-type ModalType = "KPI" | "Layouts" | "Storyboards" | null;
+type ModalType = "KPI" | null;
 
 export default function NavBarOld() {
   const [openModal, setOpenModal] = useState<ModalType>(null);
@@ -11,13 +11,11 @@ export default function NavBarOld() {
 
   const buttons: { label: string; modalType: ModalType }[] = [
     { label: "Featured", modalType: null },
-    { label: "KPI", modalType: "KPI" },
-    { label: "Layouts", modalType: "Layouts" },
-    { label: "Storyboards", modalType: "Storyboards" },
+    { label: "KPI", modalType: "KPI" }
   ];
 
   return (
-    <nav className="grid grid-cols-4 bg-slate-200 rounded mt-4 p-1">
+    <nav className="grid grid-cols-2 bg-slate-200 rounded mt-4 p-1">
       {buttons.map(({ label, modalType }) => (
         <button
           key={label}

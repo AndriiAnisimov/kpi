@@ -11,7 +11,7 @@ import MetricType from "@/components/MetricType";
 import Modal from "@/components/shared/Modal";
 import RequestButton from "@/components/shared/RequestButton";
 
-type ModalType = "KPI" | "Layouts" | "Storyboards" | null;
+type ModalType = "KPI" | null;
 
 export default function ModalContent({ type, onClose }: { type: ModalType; onClose: () => void }) {
   return (
@@ -28,6 +28,7 @@ export default function ModalContent({ type, onClose }: { type: ModalType; onClo
 
       {type === "KPI" && (
         <>
+          <KpiList />
           <AffiliateList />
 
           <div className="grid gap-x-8 gap-y-4 grid-cols-4 mt-8">
@@ -37,20 +38,6 @@ export default function ModalContent({ type, onClose }: { type: ModalType; onClo
             <div className="verical-line"><MetricLast /></div>
           </div>
           
-          <BusinessQuestionList />
-        </>
-      )}
-
-      {type === "Layouts" && (
-        <>
-          <KpiList />
-        </>
-      )}
-
-      {type === "Storyboards" && (
-        <>
-          <KpiList />
-          <AffiliateList />
           <BusinessQuestionList />
           <div className="mt-4 mx-auto w-[88px]">
             <RequestButton />

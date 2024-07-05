@@ -8,10 +8,7 @@ import Role from "@/components/Role";
 
 export default function TestPage() {
   return (
-    <Provider store={store}>
-      <h1 className="font-bold mt-8 text-4xl text-center">Library</h1>
-      <p className="mt-4 text-center">Browse for assets needed to report and present analysis.</p>
-      
+    <Provider store={store}>      
       <NavBarOld />
       
       <AssetList
