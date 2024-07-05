@@ -11,5 +11,5 @@ export default function FavoritesPage() {
       <Title title="Favorites" />
       <AssetList category="Favorites" />
     </Provider>
-  )
+  );
 }

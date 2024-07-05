@@ -1,12 +1,16 @@
 import {
+  ArchiveBoxIcon,
   BookmarkIcon,
   BookmarkSlashIcon,
   ChartPieIcon,
   CubeIcon,
+  FunnelIcon,
   InformationCircleIcon,
   LinkIcon,
   MagnifyingGlassIcon,
+  StarIcon,
   TableCellsIcon,
+  UserCircleIcon,
   XMarkIcon
 } from "@heroicons/react/24/outline";
 
@@ -16,14 +20,18 @@ type IconProps = {
 };
 
 const icons = {
+  ArchiveBoxIcon,
   BookmarkIcon,
   BookmarkSlashIcon,
   ChartPieIcon,
   CubeIcon,
+  FunnelIcon,
   InformationCircleIcon,
   LinkIcon,
   MagnifyingGlassIcon,
+  StarIcon,
   TableCellsIcon,
+  UserCircleIcon,
   XMarkIcon
 };
 

@@ -11,5 +11,5 @@ export default function ArchivedPage() {
       <Title title="Archived" />
       <AssetList category="Archived" />
     </Provider>
-  )
+  );
 }

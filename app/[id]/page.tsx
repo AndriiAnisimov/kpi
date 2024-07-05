@@ -42,5 +42,5 @@ export default function AssetDetail({ params }: { params: { id: string }}) {
     <Provider store={store}>
       <AssetContent params={params} />
     </Provider>
-  )
+  );
 }
