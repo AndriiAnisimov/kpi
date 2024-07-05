@@ -23,7 +23,7 @@ export default function Asset({ asset, itemClass }: AssetProps) {
       <article key={asset.id} className={itemClass}>
         <header className="flex justify-between items-center">
           <Link href={`/${asset.id}`} passHref>
-            <Icon name="ChartPieIcon" className="w-[24px] h-[24px]" />
+            <Icon name="ChartBarIcon" className="w-[20px] h-[20px]" />
           </Link>
 
           <p className="font-bold text-center">{asset.name}</p>
@@ -34,7 +34,14 @@ export default function Asset({ asset, itemClass }: AssetProps) {
         </header>
         
         <p className="text-center mt-1">{asset.short_description}</p>
-        <p className="text-center mt-1">Category: {asset.category}</p>
+        <p className="text-center mt-1">{asset.category}</p>
+
+        <div className="flex justify-center items-center">
+          <Icon name="FlagIcon" className="w-[20px] h-[20px]" />
+          <Icon name="NewspaperIcon" className="w-[20px] h-[20px]" />
+          <Icon name="ArchiveBoxIcon" className="w-[20px] h-[20px]" />
+          <Icon name="StarIcon" className="w-[20px] h-[20px]" />
+        </div>
       </article>
 
       {openModal === "detail" && (

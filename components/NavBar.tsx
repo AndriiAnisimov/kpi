@@ -37,11 +37,27 @@ export default function NavBar() {
     { url: "/profile", icon: Icon, iconName: "UserCircleIcon" }
   ]);
 
+  const logoLink = links[0];
+  const textLinks = links.slice(1, 4);
+  const iconLinks = links.slice(4);
+
   return (
-    <nav className="flex justify-center">
-      {links.map(({ url, title, icon, iconName }) => (
-        <NavLink key={url} url={url} title={title} icon={icon} iconName={iconName} />
-      ))}
+    <nav className="flex justify-between items-center bg-white shadow-md px-4 py-2">
+      <div className="flex items-center">
+        <NavLink url={logoLink.url} title={logoLink.title} />
+      </div>
+
+      <div className="flex items-center mx-1">
+        {textLinks.map(({ url, title }) => (
+          <NavLink key={url} url={url} title={title} />
+        ))}
+      </div>
+
+      <div className="flex items-center mx-1">
+        {iconLinks.map(({ url, icon, iconName }) => (
+          <NavLink key={url} url={url} icon={icon} iconName={iconName} />
+        ))}
+      </div>
     </nav>
   );
 }
