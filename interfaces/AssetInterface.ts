@@ -5,9 +5,9 @@ export interface AssetInterface {
   affiliate?: string;
   archive: boolean;
   brand: string;
-  business_question?: BusinessQuestionInterface;
+  businessQuestion?: BusinessQuestionInterface;
   category?: string;
-  chart_data?: ChartDataInterface[];
+  chartData?: ChartDataInterface[];
   country: string;
   date: string;
   description: string;
@@ -15,6 +15,6 @@ export interface AssetInterface {
   id: string;
   name: string;
   region: string;
-  short_description: string;
+  shortDescription: string;
   value: number;
 }

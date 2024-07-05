@@ -15,7 +15,8 @@ export default function useFilteredAssets(searchQuery: string): AssetInterface[]
       asset.date.toLowerCase().includes(searchQuery) ||
       asset.description.toLowerCase().includes(searchQuery) ||
       asset.name.toLowerCase().includes(searchQuery) ||
-      asset.short_description?.toLowerCase().includes(searchQuery) ||
+      asset.region.toLowerCase().includes(searchQuery) ||
+      asset.shortDescription?.toLowerCase().includes(searchQuery) ||
       asset.value.toString().toLowerCase().includes(searchQuery)
     );
   }, [assets, searchQuery]);

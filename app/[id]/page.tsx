@@ -21,16 +21,16 @@ function AssetContent({ params }: { params: { id: string }}) {
       <p className="text-center mt-4">Value: {asset.value}</p>
 
       <div className="flex">
-        {asset?.chart_data && asset.chart_data.length > 0 ? (
+        {asset?.chartData && asset.chartData.length > 0 ? (
           <div className="flex flex-col w-1/2">
             <h2 className="text-2xl text-center mt-4">Trend for {asset.name}</h2>
-            <Highchart chart_data={asset.chart_data} />
+            <Highchart chartData={asset.chartData} />
           </div>
         ) : null}
 
-        <div className={`flex flex-col ${asset?.chart_data && asset.chart_data.length > 0 ? 'w-1/2' : 'w-full'}`}>
+        <div className={`flex flex-col ${asset?.chartData && asset.chartData.length > 0 ? 'w-1/2' : 'w-full'}`}>
           <h2 className="text-2xl text-center mt-4">Trend for Filtered KPI</h2>
-          <Highchart chart_data={filteredAssets} />
+          <Highchart chartData={filteredAssets} />
         </div>
       </div>
     </section>

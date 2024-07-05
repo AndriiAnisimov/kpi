@@ -16,7 +16,17 @@ interface LinkItem {
   iconName?: IconName;
 }
 
-function NavLink({ url, title, icon: IconComponent, iconName }: { url: string, title?: string, icon?: typeof Icon, iconName?: IconName }) {
+function NavLink({
+  url,
+  title,
+  icon: IconComponent,
+  iconName
+}: {
+  url: string,
+  title?: string,
+  icon?: typeof Icon,
+  iconName?: IconName
+}) {
   return (
     <Link href={url} className="flex items-center rounded-lg px-3 py-2 text-slate-700 hover:bg-slate-100 hover:text-slate-900">
       {IconComponent && iconName ? <IconComponent name={iconName} className="w-[24px] h-[24px]" /> : null}

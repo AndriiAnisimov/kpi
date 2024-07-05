@@ -1,4 +1,12 @@
-export default function ProgressBar({ value, progressValue, progressColor }: { value: number, progressValue: number, progressColor: string }) {
+export default function ProgressBar({
+  value,
+  progressValue,
+  progressColor
+}: {
+  value: number,
+  progressValue: number,
+  progressColor: string
+}) {
   return (
     <div className="flex justify-center progress-wrapper">
       <svg

@@ -1,5 +1,5 @@
 export interface BusinessQuestionInterface {
-  id_bq: string;
+  idBq: string;
   name: string;
   description: string;
 }

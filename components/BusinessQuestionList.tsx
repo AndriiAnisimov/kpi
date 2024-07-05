@@ -4,8 +4,8 @@ import Title from "@/components/shared/Title";
 
 export default function BusinessQuestionList() {
   const favoriteAssets = useFavoriteAssets();
-  const filteredAssets = favoriteAssets.filter(asset => asset.business_question !== undefined);
-  const businessQuestions = filteredAssets.map(bq => bq.business_question);
+  const filteredAssets = favoriteAssets.filter(asset => asset.businessQuestion !== undefined);
+  const businessQuestions = filteredAssets.map(bq => bq.businessQuestion);
   const hasValidQuestions = businessQuestions.some(bq => bq);
 
   return (
@@ -17,7 +17,7 @@ export default function BusinessQuestionList() {
           {businessQuestions.map((businessQuestionItem) => (
             businessQuestionItem ? (
               <BusinessQuestion
-                key={businessQuestionItem.id_bq}
+                key={businessQuestionItem.idBq}
                 businessQuestion={businessQuestionItem}
                 itemClass="flex gap-2 p-2 rounded hover:bg-slate-200 hover:cursor-pointer"
               />

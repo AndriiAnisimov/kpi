@@ -31,7 +31,7 @@ export default function Asset({ asset, itemClass }: AssetProps) {
             <Icon name="ChartBarIcon" className="w-[20px] h-[20px]" />
           </Link>
 
-          <p className="text-center mx-1 truncate ...">{asset.short_description}</p>
+          <p className="text-center mx-1 truncate ...">{asset.shortDescription}</p>
 
           <div className="cursor-pointer" onClick={() => handleOpenModal("detail")}>
             <Icon name="InformationCircleIcon" className="w-[24px] h-[24px]" />
