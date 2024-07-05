@@ -1,16 +1,15 @@
 "use client";
 import { Provider } from "react-redux";
 import { store } from "@/store";
-import AssetList from "@/components/AssetList";
 
-export default function TestPage() {
+import AssetList from "@/components/AssetList";
+import Title from "@/components/shared/Title";
+
+export default function FeaturedPage() {
   return (
     <Provider store={store}>
-      <AssetList
-        category="Featured"
-        title="Featured"
-        subtitle="Curated top picks from this week"
-      />
+      <Title title="Featured" />
+      <AssetList category="Featured" />
     </Provider>
   );
 }

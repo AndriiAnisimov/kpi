@@ -52,11 +52,7 @@ function AssetsContent() {
         options={KPIArray}
       />
 
-      <AssetList
-        category="All"
-        title="All"
-        subtitle="A complete list of all assets"
-      />
+      <AssetList category="All" />
     </>
   );
 }

@@ -1,5 +1,5 @@
 export default function SubTitle({ subtitle }: { subtitle: string }) {
   return (
-    <p className="mt-2">{subtitle}</p>
+    <h3 className="font-bold text-2xl text-center mt-2">{subtitle}</h3>
   );
 }

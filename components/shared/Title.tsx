@@ -1,5 +1,5 @@
 export default function Title({ title }: { title: string }) {
   return (
-    <h2 className="mt-6 text-2xl">{title}</h2>
+    <h2 className="font-bold text-3xl text-center mt-6">{title}</h2>
   );
 }

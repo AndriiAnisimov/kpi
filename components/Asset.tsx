@@ -8,43 +8,34 @@ import Favorite from "@/components/Favorite";
 import Modal from "@/components/shared/Modal";
 
 interface AssetProps {
-  itemClass: string;
   asset: AssetInterface;
-  useLink?: boolean;
+  itemClass: string;
 }
 
-export default function Asset({ itemClass, asset, useLink }: AssetProps) {
+export default function Asset({ asset, itemClass }: AssetProps) {
   const [openModal, setOpenModal] = useState<string | null>(null);
 
   const handleOpenModal = (modalType: string | null) => setOpenModal(modalType);
   const handleCloseModal = () => setOpenModal(null);
-
-  const content = (
-    <article>
-      <header className="flex justify-between items-center">
-        <Icon name="ChartPieIcon" className="w-[24px] h-[24px]" />
-        <p className="font-bold text-center">{asset.name}</p>
-        <Icon name="InformationCircleIcon" className="w-[24px] h-[24px]" />
-      </header>
-      
-      <p className="text-center mt-1">{asset.short_description}</p>
-      <p className="text-center mt-1">Category: {asset.category}</p>
-    </article>
-  );
   
   return (
     <>
-      {useLink ? (
-        <Link href={`/${asset.id}`} passHref>
-          <li key={asset.id} className={`${itemClass} cursor-pointer`}>
-            {content}
-          </li>
-        </Link>
-      ) : (
-        <li key={asset.id} className={itemClass} onClick={() => handleOpenModal("detail")}>
-          {content}
-        </li>
-      )}
+      <article key={asset.id} className={itemClass}>
+        <header className="flex justify-between items-center">
+          <Link href={`/${asset.id}`} passHref>
+            <Icon name="ChartPieIcon" className="w-[24px] h-[24px]" />
+          </Link>
+
+          <p className="font-bold text-center">{asset.name}</p>
+
+          <div className="cursor-pointer" onClick={() => handleOpenModal("detail")}>
+            <Icon name="InformationCircleIcon" className="w-[24px] h-[24px]" />
+          </div>
+        </header>
+        
+        <p className="text-center mt-1">{asset.short_description}</p>
+        <p className="text-center mt-1">Category: {asset.category}</p>
+      </article>
 
       {openModal === "detail" && (
         <Modal onClose={handleCloseModal}>

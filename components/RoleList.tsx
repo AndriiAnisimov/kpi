@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 import { RootState } from "@/store";
 import { RoleItemInterface } from "@/interfaces/RoleItemInterface";
-import Title from "@/components/shared/Title";
+import SubTitle from "@/components/shared/SubTitle";
 
 export default function RoleList() {
   const rolesState = useSelector((state: RootState) => state.roles.roles as RoleItemInterface[]);
@@ -22,7 +22,7 @@ export default function RoleList() {
 
   return (
     <div className="text-center">
-      <Title title="Current roles:" />
+      <SubTitle subtitle="Current roles:" />
 
       <form>
         {rolesState.map((role) => (

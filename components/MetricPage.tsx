@@ -1,5 +1,6 @@
 import { useState } from "react";
 import useFavoriteAssets from "@/utils/useFavoriteAssets";
+
 import Icon from "@/components/shared/Icon";
 import Popup from "@/components/shared/Popup";
 

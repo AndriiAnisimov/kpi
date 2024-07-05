@@ -2,36 +2,32 @@
 import { Provider } from "react-redux";
 import { store } from "@/store";
 
-import AssetList from "@/components/AssetList";
-import NavBarOld from "@/components/NavBarOld";
-import Role from "@/components/Role";
+import AffiliateList from "@/components/AffiliateList";
+import BusinessQuestionList from "@/components/BusinessQuestionList";
+import KpiList from "@/components/KpiList";
+import MetricCount from "@/components/MetricCount";
+import MetricLast from "@/components/MetricLast";
+import MetricPage from "@/components/MetricPage";
+import MetricType from "@/components/MetricType";
+import RequestButton from "@/components/shared/RequestButton";
 
 export default function TestPage() {
   return (
-    <Provider store={store}>      
-      <NavBarOld />
+    <Provider store={store}>
+      <KpiList />
+      <AffiliateList />
+
+      <div className="grid gap-x-8 gap-y-4 grid-cols-4 mt-8">
+        <div className="verical-line"><MetricCount /></div>
+        <div className="verical-line"><MetricType /></div>
+        <div className="verical-line"><MetricPage /></div>
+        <div className="verical-line"><MetricLast /></div>
+      </div>
       
-      <AssetList
-        category="Featured"
-        title="Featured"
-        subtitle="Curated top picks from this week"
-      />
-
-      <Role allowedRoles={["admin"]}>
-        <AssetList
-          category="Trending"
-          title="Trending"
-          subtitle="Most popular by community"
-        />
-      </Role>
-
-      <Role allowedRoles={["admin"]}>
-        <AssetList
-          category="Another"
-          title="Another"
-          subtitle="Another assets"
-        />
-      </Role>
+      <BusinessQuestionList />
+      <div className="mt-4 mx-auto w-[88px]">
+        <RequestButton />
+      </div>
     </Provider>
   );
 }

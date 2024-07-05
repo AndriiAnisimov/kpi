@@ -1,16 +1,18 @@
 "use client";
 import { Provider } from "react-redux";
 import { store } from "@/store";
-import AssetList from "@/components/AssetList";
 
-export default function TestPage() {
+import AssetList from "@/components/AssetList";
+import Role from "@/components/Role";
+import Title from "@/components/shared/Title";
+
+export default function TrendingPage() {
   return (
     <Provider store={store}>
-      <AssetList
-        category="Trending"
-        title="Trending"
-        subtitle="Most popular by community"
-      />
+      <Role allowedRoles={["admin"]}>
+        <Title title="Trending" />
+        <AssetList category="Trending" />
+      </Role>
     </Provider>
   );
 }

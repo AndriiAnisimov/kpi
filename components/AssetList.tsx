@@ -2,12 +2,9 @@ import { useSelector } from "react-redux";
 import { RootState } from "@/store";
 import { AssetListInterface } from "@/interfaces/AssetListInterface";
 import useFilteredAssets from "@/utils/useFilteredAssets";
-
 import Asset from "@/components/Asset";
-import SubTitle from "@/components/shared/SubTitle";
-import Title from "@/components/shared/Title";
 
-export default function AssetsList({ category, title, subtitle }: AssetListInterface) {
+export default function AssetsList({ category }: AssetListInterface) {
   const searchQuery = useSelector((state: RootState) => state.search.query.toLowerCase());
   const filteredAssets = useFilteredAssets(searchQuery);
 
@@ -25,28 +22,18 @@ export default function AssetsList({ category, title, subtitle }: AssetListInter
     <>
       {categorizedAssets.length > 0 ? (
         <>
-          {category !== "All" && (
-            <>
-              <Title title={title} />
-              <SubTitle subtitle={subtitle} />
-            </>
-          )}
-
-          <ul className="grid gap-x-8 gap-y-4 grid-cols-4 mt-4">
+          <div className="grid gap-x-8 gap-y-4 grid-cols-4 mt-4">
             {categorizedAssets.map((asset) => (
               <Asset
                 key={asset.id}
                 asset={asset}
-                itemClass={`flex gap-2 p-2 ${
-                  category === "All" ? "border-2 rounded-lg bg-white hover:bg-slate-200" : "hover:bg-white"
-                } hover:cursor-pointer`}
-                useLink={category === "All"}
+                itemClass="flex flex-col border-2 rounded-lg bg-white p-2"
               />
             ))}
-          </ul>
+          </div>
         </>
       ) : (
-        <p className="mt-4">No {title} Assets match your search criteria.</p>
+        <p className="mt-4">No Assets match your search criteria.</p>
       )}
     </>
   );
