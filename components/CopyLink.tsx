@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { LinkIcon } from "@heroicons/react/24/outline";
+import Icon from "@/components/shared/Icon";
 
 export default function CopyLink() {
   const [copied, setCopied] = useState(false);
@@ -22,7 +22,7 @@ export default function CopyLink() {
       {copied ? (
         <span className="text-xs h-3 w-30">Link Copied!</span>
       ) : (
-        <LinkIcon className="h-4 w-4" />
+        <Icon name="LinkIcon" className="w-[16px] h-[16px]" />
       )}
     </button>
   );

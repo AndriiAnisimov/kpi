@@ -15,7 +15,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return (
     <html lang="en">
       <body className={`${roboto.className} bg-slate-50`}>
-        <main className="max-w-3xl mt-4 mx-auto">
+        <main className="max-w-5xl mx-auto my-2">
           <Header />
           {children}
         </main>

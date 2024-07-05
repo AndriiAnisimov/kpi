@@ -1,6 +1,5 @@
 import { useState } from "react";
-import { CubeIcon } from "@heroicons/react/24/outline";
-
+import Icon from "@/components/shared/Icon";
 import Modal from "@/components/shared/Modal";
 import RoleList from "@/components/RoleList";
 
@@ -16,7 +15,7 @@ export default function RequestButton() {
         onClick={() => handleOpenModal(true)}
         className="flex items-center bg-slate-400 rounded text-white px-2 py-1"
       >
-        <CubeIcon className="size-4" />
+        <Icon name="CubeIcon" className="w-[18px] h-[18px]" />
         <span className="text-sm ml-1">Request</span>
       </button>
 

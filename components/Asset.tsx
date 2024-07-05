@@ -1,9 +1,9 @@
 import { useState } from "react";
-import { AssetInterface } from "@/interfaces/AssetInterface";
-import { ChartPieIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
+import { AssetInterface } from "@/interfaces/AssetInterface";
 
 import CopyLink from "@/components/CopyLink";
+import Icon from "@/components/shared/Icon";
 import Favorite from "@/components/Favorite";
 import Modal from "@/components/shared/Modal";
 
@@ -21,13 +21,14 @@ export default function Asset({ itemClass, asset, useLink }: AssetProps) {
 
   const content = (
     <article>
-      <div className="flex justify-center items-center bg-slate-200 rounded-lg w-14 h-14">
-        <ChartPieIcon className="size-10" />
-      </div>
-
-      <p className="font-bold">{asset.name}</p>
-      <p>{asset.short_description}</p>
-      <p>{asset.category}</p>
+      <header className="flex justify-between items-center">
+        <Icon name="ChartPieIcon" className="w-[24px] h-[24px]" />
+        <p className="font-bold text-center">{asset.name}</p>
+        <Icon name="InformationCircleIcon" className="w-[24px] h-[24px]" />
+      </header>
+      
+      <p className="text-center mt-1">{asset.short_description}</p>
+      <p className="text-center mt-1">Category: {asset.category}</p>
     </article>
   );
   

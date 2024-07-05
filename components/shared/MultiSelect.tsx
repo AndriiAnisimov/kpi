@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from "react";
+import Icon from "@/components/shared/Icon";
 
 export default function MultiSelect({ options }: { options: string[] }) {
   const [selectedOptions, setSelectedOptions] = useState<string[]>([]);
@@ -49,7 +50,7 @@ export default function MultiSelect({ options }: { options: string[] }) {
               clearAll();
             }}
           >
-            Clear All
+            <Icon name="XMarkIcon" className="w-[20px] h-[20px]" />
           </button>
         )}
       </div>

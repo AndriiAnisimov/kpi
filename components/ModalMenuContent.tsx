@@ -1,8 +1,8 @@
-import { TableCellsIcon } from "@heroicons/react/24/outline";
 import AffiliateList from "@/components/AffiliateList";
 import Badge from "@/components/shared/Badge";
 import BusinessQuestionList from "@/components/BusinessQuestionList";
 import CopyLink from "@/components/CopyLink";
+import Icon from "@/components/shared/Icon";
 import KpiList from "@/components/KpiList";
 import MetricCount from "@/components/MetricCount";
 import MetricLast from "@/components/MetricLast";
@@ -18,7 +18,7 @@ export default function ModalContent({ type, onClose }: { type: ModalType; onClo
     <Modal onClose={onClose}>
       <CopyLink />
       <div className="bg-slate-100 rounded text-gray-500 mx-auto p-4 w-20 h-20">
-        <TableCellsIcon />
+        <Icon name="TableCellsIcon" className="w-[48px] h-[48px]" />
       </div>
       
       <div className="flex justify-center items-center mt-4">

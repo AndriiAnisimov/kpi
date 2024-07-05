@@ -1,7 +1,7 @@
 import { useDispatch } from "react-redux";
 import { toggleFavorite } from "@/store/slices/assetSlice";
 import { FavoriteInterface } from "@/interfaces/FavoriteInterface";
-import { BookmarkIcon, BookmarkSlashIcon } from "@heroicons/react/24/outline";
+import Icon from "@/components/shared/Icon";
 
 export default function Favorite({ assetId, isFavorite }: FavoriteInterface) {
   const dispatch = useDispatch();
@@ -12,7 +12,9 @@ export default function Favorite({ assetId, isFavorite }: FavoriteInterface) {
   const styles = `flex justify-center items-center rounded mt-2 px-2 py-1 w-full ${
     isFavorite ? "bg-slate-200 text-black" : "bg-blue-950 text-white"
   }`;
-  const icon = isFavorite ? <BookmarkSlashIcon className="size-4" /> : <BookmarkIcon className="size-4" />;
+  const icon = isFavorite
+    ? <Icon name="BookmarkSlashIcon" className="w-[16px] h-[16px]" />
+    : <Icon name="BookmarkIcon" className="w-[16px] h-[16px]" />;
   const text = isFavorite ? "Unfavorite item" : "Favorite item";
 
   return (

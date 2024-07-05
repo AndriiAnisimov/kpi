@@ -1,5 +1,5 @@
 import { ModalInterface } from "@/interfaces/ModalInterface";
-import { XMarkIcon } from "@heroicons/react/24/outline";
+import Icon from "@/components/shared/Icon";
 
 export default function Modal({ onClose, children }: ModalInterface) {
   return (
@@ -11,7 +11,7 @@ export default function Modal({ onClose, children }: ModalInterface) {
           onClick={onClose}
           className="absolute right-2 top-2 w-5 h-5 text-gray-500 hover:text-gray-800"
         >
-          <XMarkIcon />
+          <Icon name="XMarkIcon" className="w-[20px] h-[20px]" />
         </button>
       </div>
     </div>

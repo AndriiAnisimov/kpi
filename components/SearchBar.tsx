@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import { setSearchQuery, clearSearchQuery } from "@/store/slices/searchSlice";
 import { RootState } from "@/store";
-import { MagnifyingGlassIcon, XMarkIcon } from "@heroicons/react/24/outline";
+import Icon from "@/components/shared/Icon";
 
 export default function SearchBar() {
   const dispatch = useDispatch();
@@ -25,14 +25,14 @@ export default function SearchBar() {
         className="border rounded px-10 py-2 w-full focus:border-gray-500 focus:outline-none"
       />
 
-      <MagnifyingGlassIcon className="absolute left-3 top-2.5 w-5 h-5" />
+      <Icon name="MagnifyingGlassIcon" className="absolute left-3 top-2.5 w-5 h-5" />
 
       {searchQuery && (
         <button
           onClick={handleClearSearch}
           className="absolute right-3 top-2.5 bg-slate-200 rounded w-5 h-5"
         >
-          <XMarkIcon />
+          <Icon name="XMarkIcon" className="w-[20px] h-[20px]" />
         </button>
       )}
     </div>
