@@ -2,18 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
-.bg-default {
-  background-color: rgb(226 232 240);
-}
-
-.bg-active {
-  background-color: rgb(255 255 255);
-}
-
+/* Metric */
 .verical-line {
   position: relative;
 }
-
 .verical-line::after {
   content: '';
   position: absolute;
@@ -23,7 +15,38 @@
   height: 100%;
   background-color: rgb(226 232 240);
 }
-
 .verical-line:last-child::after {
   display: none;
+}
+
+/* ProgressBar */
+.progress-wrapper {
+	margin-top: 16px;
+	position: relative;
+}
+.circle-container {
+  width: 112px;
+  height: 112px;
+  fill: none;
+	stroke-dasharray: 75 100;
+  stroke-linecap: round;
+	transform: rotate(-225deg);
+}
+.circle-container__background {
+	fill: none;
+  stroke: gainsboro;
+  stroke-linecap: round;
+	stroke-width: 3px;
+}
+.circle-container__progress {
+	fill: none;
+  stroke-linecap: round;
+  stroke-width: 3px;
+}
+.progress-value {
+	color: #242731;
+	font-size: 24px;
+	font-weight: 700;
+	position: absolute;
+	top: 32%;
 }

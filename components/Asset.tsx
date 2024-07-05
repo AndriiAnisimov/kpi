@@ -6,6 +6,7 @@ import CopyLink from "@/components/CopyLink";
 import Icon from "@/components/shared/Icon";
 import Favorite from "@/components/Favorite";
 import Modal from "@/components/shared/Modal";
+import ProgressBar from "@/components/shared/ProgressBar";
 
 interface AssetProps {
   asset: AssetInterface;
@@ -17,7 +18,11 @@ export default function Asset({ asset, itemClass }: AssetProps) {
 
   const handleOpenModal = (modalType: string | null) => setOpenModal(modalType);
   const handleCloseModal = () => setOpenModal(null);
-  
+
+  const progressValue = (100 - asset.value) * 0.75;
+  const progressColor: string = asset.value < 35 ? "red" :
+                                asset.value <= 75 ? "yellow" : "green";
+
   return (
     <>
       <article key={asset.id} className={itemClass}>
@@ -26,17 +31,23 @@ export default function Asset({ asset, itemClass }: AssetProps) {
             <Icon name="ChartBarIcon" className="w-[20px] h-[20px]" />
           </Link>
 
-          <p className="font-bold text-center">{asset.name}</p>
+          <p className="text-center mx-1 truncate ...">{asset.short_description}</p>
 
           <div className="cursor-pointer" onClick={() => handleOpenModal("detail")}>
             <Icon name="InformationCircleIcon" className="w-[24px] h-[24px]" />
           </div>
         </header>
         
-        <p className="text-center mt-1">{asset.short_description}</p>
-        <p className="text-center mt-1">{asset.category}</p>
+        <ProgressBar
+          value={asset.value}
+          progressValue={progressValue}
+          progressColor={progressColor}
+        />
+        
+        <div className="flex justify-center items-center mt-2">
+          <p className="mr-1">{asset.category}</p>
+          <p className="mr-1">{asset.name}</p>
 
-        <div className="flex justify-center items-center">
           <Icon name="FlagIcon" className="w-[20px] h-[20px]" />
           <Icon name="NewspaperIcon" className="w-[20px] h-[20px]" />
           <Icon name="ArchiveBoxIcon" className="w-[20px] h-[20px]" />
