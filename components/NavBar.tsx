@@ -1,7 +1,9 @@
 "use client";
 import Link from "next/link";
 import { useState } from "react";
+
 import Icon from "@/components/shared/Icon";
+import Logo from "@/components/Logo";
 
 type IconName =
   "ArchiveBoxIcon" |
@@ -37,7 +39,7 @@ function NavLink({
 
 export default function NavBar() {
   const [links, setLinks] = useState<LinkItem[]>([
-    { url: "/", title: "Logo" },
+    { url: "/" },
     { url: "/featured", title: "Featured" },
     { url: "/trending", title: "Trending" },
     { url: "/another", title: "Another" },
@@ -53,17 +55,15 @@ export default function NavBar() {
 
   return (
     <nav className="flex justify-between items-center bg-white shadow-md px-4 py-2">
-      <div className="flex items-center">
-        <NavLink url={logoLink.url} title={logoLink.title} />
-      </div>
+      <Logo url={logoLink.url} />
 
-      <div className="flex items-center mx-1">
+      <div className="flex items-center">
         {textLinks.map(({ url, title }) => (
           <NavLink key={url} url={url} title={title} />
         ))}
       </div>
 
-      <div className="flex items-center mx-1">
+      <div className="flex items-center">
         {iconLinks.map(({ url, icon, iconName }) => (
           <NavLink key={url} url={url} icon={icon} iconName={iconName} />
         ))}
