@@ -2,6 +2,7 @@
 import { Provider, useSelector } from "react-redux";
 import { store, RootState } from "@/store";
 import useFilteredAssets from "@/utils/useFilteredAssets";
+import DefaultLayout from "@/layouts/DefaultLayout";
 import Highchart from "@/components/Highchart";
 
 function AssetContent({ params }: { params: { id: string }}) {
@@ -40,7 +41,9 @@ function AssetContent({ params }: { params: { id: string }}) {
 export default function AssetDetail({ params }: { params: { id: string }}) {
   return (
     <Provider store={store}>
-      <AssetContent params={params} />
+      <DefaultLayout>
+        <AssetContent params={params} />
+      </DefaultLayout>
     </Provider>
   );
 }

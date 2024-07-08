@@ -1,6 +1,7 @@
 "use client";
 import { Provider, useSelector } from "react-redux";
 import { store, RootState } from "@/store";
+import ErrorLayout from "@/layouts/ErrorLayout";
 
 import useFilteredAssets from "@/utils/useFilteredAssets";
 import useUniqueValues from "@/utils/useUniqueValues";
@@ -59,7 +60,9 @@ function FilterPage() {
 export default function WrappedFilterPage() {
   return (
     <Provider store={store}>
-      <FilterPage />
+      <ErrorLayout>
+        <FilterPage />
+      </ErrorLayout>
     </Provider>
   );
 }
